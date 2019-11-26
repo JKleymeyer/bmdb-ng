@@ -1,0 +1,21 @@
+<h1>{{title}}</h1>
+
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Actor Name</th>
+        <th>Movie Name</th>
+        <th>Role</th>
+        <th>Action</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let c of credit">
+            <td>{{c.id}}</td>
+            <td>{{c.actor.firstName+" "+c.actor.lastName}}</td>
+            <td>{{c.movie.title}}</td>
+            <td>{{c.role}}</td>
+            <td>Delete|Edit</td>
+        </tr>
+    </tbody>
+
+</table>
