@@ -1,17 +1,29 @@
-<h1>{{title}}</h1>
+<div class='component-content'>
+    <div class='lefthalf'>
+        <span class='component-title'>{{title}} </span>
+        <span><a routerLink='/movies/create'>
+                <img id='createnew' width='20' height='20' src='assets/add-icon.png' title='Add New'></a>
+        </span>
+    </div>
+</div>
 
 <table class="table table-striped">
     <tr>
-        <th>Id</th><th>Title</th><th>Rating</th><th>Year</th><th>Director</th><th>Action</th>
+        <th><a (click)="sortBy('id')">Id</a></th>
+        <th><a (click)="sortBy('title')">Title</a></th>
+        <th><a (click)="sortBy('rating')">Rating</a></th>
+        <th><a (click)="sortBy('year')">Year</a></th>
+        <th><a (click)="sortBy('director')">Director</a></th>
+        <th>Action</th>
     </tr>
     <tbody>
-    <tr *ngFor= "let m of movies">
-        <td>{{m.id}}</td>
-        <td>{{m.title}}</td>
-        <td>{{m.rating}}</td>
-        <td>{{m.year}}</td>
-        <td>{{m.director}}</td>
-        <td>Delete|Edit</td>
-    </tr>
-</tbody>
+        <tr *ngFor="let m of movies | sort:sortCriteria:sortOrder">
+            <td>{{m.id}}</td>
+            <td>{{m.title}}</td>
+            <td>{{m.rating}}</td>
+            <td>{{m.year}}</td>
+            <td>{{m.director}}</td>
+            <td>Delete|Edit</td>
+        </tr>
+    </tbody>
 </table>

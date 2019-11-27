@@ -13,5 +13,6 @@ export class Credit {
         this.movieId = movieId;
         this.actorId = actorId;
         this.role = role;
-    }
+    }    
+
 }

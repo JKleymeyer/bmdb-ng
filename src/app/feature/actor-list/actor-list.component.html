@@ -2,14 +2,14 @@
 
 <table class="table table-striped">
     <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>Birthdate</th>
+        <th><a (click)="sortBy('id')">Id</a></th>
+        <th><a (click)="sortBy('firstName')">Name</a></th>
+        <th><a (click)="sortBy('gender')">Gender</a></th>
+        <th><a (click)="sortBy('birthDate')">Birthdate</a></th>
         <th>Action</th>
     </tr>
     <tbody>
-        <tr *ngFor="let a of actor">
+        <tr *ngFor="let a of actor | sort:sortCriteria:sortOrder">
             <td>{{a.id}}</td>
             <td>{{a.firstName +" " + a.lastName}}</td>
             <td>{{a.gender}}</td>
