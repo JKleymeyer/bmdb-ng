@@ -6,8 +6,8 @@
         </span>
     </div>
 </div>
-
-<table class="table table-striped">
+<p *ngIf='!movies'>Loading...</p>
+<table *ngIf= 'movies' class="table table-striped">
     <tr>
         <th><a (click)="sortBy('id')">Id</a></th>
         <th><a (click)="sortBy('title')">Title</a></th>
@@ -23,7 +23,10 @@
             <td>{{m.rating}}</td>
             <td>{{m.year}}</td>
             <td>{{m.director}}</td>
-            <td>Delete|Edit</td>
+            <td><a routerLink='/movies/detail/{{m.id}}'><img src='assets/details.png' width='20' height='20' title='Detail'></a>
+                | 
+                <a routerLink='/movies/edit/{{m.id}}'><img src='assets/pencil-icon.png' width='20' height='20' title='Edit'></a>
+            </td>
         </tr>
     </tbody>
 </table>

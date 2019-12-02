@@ -11,7 +11,7 @@ import { BaseComponent } from '../base/base.component';
 })
 export class ActorListComponent extends BaseComponent implements OnInit {
   title: string = "Actor-List";
-  actor: Actor[] = [];
+  actors: Actor[] = [];
   jr: JsonResponse;
 
   constructor(private actorSvc: ActorService) {
@@ -22,8 +22,8 @@ export class ActorListComponent extends BaseComponent implements OnInit {
     super.ngOnInit();
     this.actorSvc.list().subscribe(jresp => {
       this.jr = jresp;
-      this.actor = this.jr.data as Actor[];
-      console.log(this.actor);
+      this.actors = this.jr.data as Actor[];
+      console.log(this.actors);
     });
   }
 
