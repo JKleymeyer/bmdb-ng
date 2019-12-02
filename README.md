@@ -1,6 +1,7 @@
 # BmdbNg
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+Modeling a database after IMDB, my bootcamp created our own movie database to learn new instruction. This was our first project when learning angular.
 
 ## Development server
 
